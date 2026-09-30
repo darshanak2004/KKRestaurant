@@ -188,6 +188,311 @@
 /* FIX: vertical side word no longer swings out of the card */
 .ritual-word {
     transform-origin: center;
+    /* =====================================================
+   MOBILE VIEW
+===================================================== */
+
+/* hamburger button: hidden on desktop */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 760px) {
+
+    /* ---------- NAV ---------- */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 0 11px;
+        background: transparent;
+        border: 1px solid rgba(239, 212, 154, .4);
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        height: 1px;
+        background: var(--gold2);
+        transition: .3s;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(18, 5, 6, .97);
+        border-bottom: 1px solid var(--line);
+    }
+
+    header nav.open {
+        display: flex;
+    }
+
+    header nav a {
+        padding: 16px 6%;
+        font-size: 13px;
+        border-top: 1px solid rgba(239, 212, 154, .08);
+    }
+
+    header nav a:after {
+        display: none;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        min-height: auto;
+        padding: 110px 0 70px;
+    }
+
+    .hero-content {
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding-top: 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 13vw, 64px);
+        line-height: .9;
+        letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+        white-space: normal;
+    }
+
+    .hero h1 em {
+        margin-left: 16px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        margin-top: 20px;
+    }
+
+    .actions {
+        flex-wrap: wrap;
+        margin-top: 28px;
+    }
+
+    .hero-running {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 28px;
+    }
+
+    .hero-visual {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        transform: none;
+        animation: none;
+        width: 78vw;
+        margin: 40px auto 0;
+    }
+
+    .float-chip {
+        display: none;
+    }
+
+    .scroll {
+        display: none;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .about,
+    .specials,
+    .menu,
+    .gallery,
+    .contact {
+        padding: 80px 0;
+    }
+
+    .about-image:before {
+        inset: -10px 10px 10px -10px;
+    }
+
+    .about-image .mini-tag {
+        right: 0;
+        font-size: 8px;
+        padding: 12px 14px;
+    }
+
+    .feature {
+        grid-template-columns: 40px 1fr 20px;
+    }
+
+    .feature strong {
+        font-size: 21px;
+    }
+
+    /* plates / experience */
+    .plates-wrap {
+        gap: 30px;
+    }
+
+    .plates-art {
+        height: 300px;
+    }
+
+    .plate-orbit.orbit-one {
+        width: 230px;
+        height: 230px;
+    }
+
+    .plate-orbit.orbit-two {
+        width: 300px;
+        height: 160px;
+    }
+
+    .plate-center {
+        width: 140px;
+        height: 140px;
+    }
+
+    .plates-photo {
+        width: 100px;
+        height: 130px;
+    }
+
+    /* signatures */
+    .special-info h3 {
+        font-size: 22px;
+    }
+
+    .special-card,
+    .special-card img {
+        min-height: 300px;
+    }
+
+    /* ---------- MENU ---------- */
+    .tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .menu-photo {
+        min-height: 260px;
+    }
+
+    .menu-photo-copy {
+        left: 22px;
+        bottom: 20px;
+    }
+
+    .menu-photo-copy h3 {
+        font-size: 34px;
+    }
+
+    .menu-content {
+        padding: 24px 18px;
+    }
+
+    .menu-title h3 {
+        font-size: 32px;
+    }
+
+    .item {
+        gap: 14px;
+    }
+
+    .item h4 {
+        font-size: 20px;
+    }
+
+    /* ---------- GALLERY ---------- */
+    .photo-ritual-card {
+        min-height: 420px !important;
+    }
+
+    .ritual-head h2 {
+        font-size: 44px;
+    }
+
+    .ritual-copy h3 {
+        font-size: 30px;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact-grid {
+        gap: 40px;
+    }
+
+    .contact-card {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    /* ---------- FOOTER / FLOATING ---------- */
+    .footer-links {
+        gap: 14px 20px;
+    }
+
+    .whatsapp {
+        right: 12px;
+        bottom: 12px;
+        padding: 11px 14px;
+    }
+
+    .cursor {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .special-card,
+    .special-card img {
+        min-height: 360px;
+    }
+
+    .hero-visual {
+        width: 86vw;
+    }
+
+    .plates-copy h2 span {
+        display: inline;
+    }
+
+    .gold-btn {
+        padding: 14px 18px;
+    }
+}
 }
     </style>
 </head>
@@ -198,6 +503,9 @@
         <nav><a href="#home">Home</a><a href="#about">About</a><a href="#specials">Signatures</a><a
                 href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
         <a class="reserve" href="#contact">RESERVE A TABLE</a></div>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
 </header>
 
 <section id="home" class="hero magnetic-section">
